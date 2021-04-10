@@ -1,5 +1,12 @@
-- name: Deploy to GitHub Pages
-  uses: JamesIves/github-pages-deploy-action@4.1.1
-  with:
-    branch: gh-pages
-    folder: dist
+name: Build Vue
+on: [push, pull_request]
+jobs:
+  build_vue:
+    runs-on: ubuntu-latest
+    name: Build Nuxt
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: dist
