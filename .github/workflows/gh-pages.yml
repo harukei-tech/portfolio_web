@@ -1,12 +1,18 @@
-name: Build Vue
+name: Build Nuxt
 on: [push, pull_request]
 jobs:
   build_vue:
     runs-on: ubuntu-latest
     name: Build Nuxt
     steps:
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+      - name: Nuxt to Github Pages
+        # You may pin to the exact commit or the version.
+        # uses: ashkantaravati/NuxtToGithubPages@1d3040411fc2d234b6907434dc8560100171e3fb
+        uses: ashkantaravati/NuxtToGithubPages@v1.0
         with:
-          branch: gh-pages
-          folder: dist
+          # Your username
+          username: harukei-tech
+          # Your reponame
+          reponame: portfolio_web
+          # Your Github token
+          token: ${{ secrets.GITHUB_TOKEN }}
